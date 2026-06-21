@@ -1,0 +1,38 @@
+func getCard(at index: Int, from stack: [Int]) -> Int {
+  return stack[index]
+}
+
+func setCard(at index: Int, in stack: [Int], to newCard: Int) -> [Int] {
+  var newStack = stack
+  if index >= 0 && index < stack.count{
+    newStack[index] = newCard
+  }
+  return newStack
+}
+
+func insert(_ newCard: Int, atTopOf stack: [Int]) -> [Int] {
+  var newStack = stack
+  newStack.append(newCard)
+  return newStack
+}
+
+func removeCard(at index: Int, from stack: [Int]) -> [Int] {
+  var newStack = stack
+  if index < newStack.count && index >= 0 {
+    newStack.remove(at: index)
+    return newStack
+  }
+  return stack
+}
+
+func insert(_ newCard: Int, at index: Int, from stack: [Int]) -> [Int] {
+  var newStack = stack
+  if index <= newStack.count && index >= 0 {
+    newStack.insert(newCard, at: index)
+  }
+  return newStack
+}
+
+func checkSizeOfStack(_ stack: [Int], _ size: Int) -> Bool {
+  return stack.count == size
+}
